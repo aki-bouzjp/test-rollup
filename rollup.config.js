@@ -41,7 +41,8 @@ const browser = {
     }),
     pluginBabel({
       babelHelpers: 'bundled',
-      configFile: path.resolve(__dirname, '.babelrc.js')
+      configFile: path.resolve(__dirname, '.babelrc.js'),
+      exclude: /node_modules/,
     }),
     pluginNodeResolve({
       browser: true
@@ -96,7 +97,7 @@ const commonjs = {
     {
       dir: 'lib/commonjs',
       name: 'MapboxPromoted',
-      format: 'cjs',
+      format: 'amd',
       sourcemap: __DEV__ ? 'inline' : '',
       plugins: __DEV__ ? [] : [pluginTerser()]
     }
@@ -107,9 +108,16 @@ const commonjs = {
       module: 'esnext',
       declarationDir: 'lib/commonjs/@types'
     }),
+    pluginCommonjs({
+      extensions: ['.js', '.ts'],
+    }),
     pluginBabel({
       babelHelpers: 'bundled',
-      configFile: path.resolve(__dirname, '.babelrc.js')
+      configFile: path.resolve(__dirname, '.babelrc.js'),
+      exclude: /node_modules/,
+    }),
+    pluginNodeResolve({
+      browser: true
     })
   ]
 };
