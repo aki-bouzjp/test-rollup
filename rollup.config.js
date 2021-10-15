@@ -2,7 +2,6 @@ import pluginTypescript from '@rollup/plugin-typescript';
 import pluginCommonjs from '@rollup/plugin-commonjs';
 import pluginNodeResolve from '@rollup/plugin-node-resolve';
 import { babel as pluginBabel } from '@rollup/plugin-babel';
-import pluginNodePolyfills from 'rollup-plugin-polyfill-node';
 import { terser as pluginTerser } from 'rollup-plugin-terser';
 
 import * as path from 'path';
@@ -30,7 +29,6 @@ const browser = {
     }
   ],
   plugins: [
-    pluginNodePolyfills(),
     pluginTypescript({
       tsconfig: 'tsconfig.json',
       module: 'esnext',
@@ -44,9 +42,7 @@ const browser = {
       configFile: path.resolve(__dirname, '.babelrc.js'),
       exclude: /node_modules/,
     }),
-    pluginNodeResolve({
-      browser: true
-    })
+    pluginNodeResolve()
   ]
 };
 
@@ -80,9 +76,7 @@ const esm = {
       configFile: path.resolve(__dirname, '.babelrc.js'),
       exclude: /node_modules/,
     }),
-    pluginNodeResolve({
-      browser: true
-    })
+    pluginNodeResolve()
   ]
 };
 
@@ -116,9 +110,7 @@ const commonjs = {
       configFile: path.resolve(__dirname, '.babelrc.js'),
       exclude: /node_modules/,
     }),
-    pluginNodeResolve({
-      browser: true
-    })
+    pluginNodeResolve()
   ]
 };
 

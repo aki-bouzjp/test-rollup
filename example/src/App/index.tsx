@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import mapboxgl, { Map } from 'mapbox-gl';
 // import * as test from 'test-rollup/lib/es/index';
-import * as test from 'test-rollup/lib/es/index';
+import * as test from 'test-rollup/lib/commonjs/promotionPopup';
 import { STYLES, BUILDINGS_LAYER_STYLE, TERRAIN_SOURCE_STYLE } from './helpers';
 import { Container, PromotionPanel, Select, Option, DebugPanel, Button } from './styles';
 
