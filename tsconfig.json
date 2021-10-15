@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "declaration": true,
+    "declarationDir": "lib/@types",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noResolve": true,
+    "target": "esnext",
+    "paths": {
+      "src/*":   ["./src/*"],
+      "core/*":  ["./src/core/*"],
+      "apis/*":  ["./src/apis/*"],
+      "utils/*": ["./src/utils/*"]
+    },
+    "rootDir": "src",
+    "skipLibCheck": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "typeRoots": [
+      "src/@types",
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

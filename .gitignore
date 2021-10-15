@@ -1,0 +1,10 @@
+/node_modules
+
+.DS_Store
+.yarn-error.log
+/example/.env.development
+/example/.env.staging
+/example/.env.production
+/example/dist
+/example/public/mapbox-promoted-js
+/example/node_modules
