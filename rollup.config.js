@@ -52,9 +52,9 @@ const browser = {
 const esm = {
   input: {
     index: 'src/core/index.ts',
-    // promotionPopup: 'src/core/promotionPopup.ts',
-    // promotionCard: 'src/core/promotionCard.ts',
-    // promotionSideCard: 'src/core/promotionSideCard.ts',
+    promotionPopup: 'src/core/promotionPopup.ts',
+    promotionCard: 'src/core/promotionCard.ts',
+    promotionSideCard: 'src/core/promotionSideCard.ts',
   },
   output: [
     {
@@ -88,15 +88,15 @@ const esm = {
 const commonjs = {
   input: {
     index: 'src/core/index.ts',
-    // promotionPopup: 'src/core/promotionPopup.ts',
-    // promotionCard: 'src/core/promotionCard.ts',
-    // promotionSideCard: 'src/core/promotionSideCard.ts',
+    promotionPopup: 'src/core/promotionPopup.ts',
+    promotionCard: 'src/core/promotionCard.ts',
+    promotionSideCard: 'src/core/promotionSideCard.ts',
   },
   output: [
     {
       dir: 'lib/commonjs',
       name: 'MapboxPromoted',
-      format: 'amd',
+      format: 'cjs',
       sourcemap: __DEV__ ? 'inline' : '',
       plugins: __DEV__ ? [] : [pluginTerser()]
     }

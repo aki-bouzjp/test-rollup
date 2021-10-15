@@ -1,11 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Map } from 'mapbox-gl';
-import * as test from 'mapbox-promoted-js';
-// import { promoted as MapboxPromoted } from 'mapbox-promoted-js/lib/core/promoted';
+import mapboxgl, { Map } from 'mapbox-gl';
+// import * as test from 'test-rollup/lib/es/index';
+import * as test from 'test-rollup/lib/browser/index';
 import { STYLES, BUILDINGS_LAYER_STYLE, TERRAIN_SOURCE_STYLE } from './helpers';
 import { Container, PromotionPanel, Select, Option, DebugPanel, Button } from './styles';
-// import { daysInWeek } from 'date-fns';
-// import { has } from 'lodash-es';
 
 mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
 (mapboxgl as unknown as { workerClass: string }).workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
@@ -36,10 +34,6 @@ const App: React.FC = () => {
   const [isTerrain, setIsTerrain] = useState(false);
   // const [promoted, setPromoted] = useState<MapboxPromoted>();
   const [map, setMap] = useState<mapboxgl.Map>();
-
-  // console.log(PromotedPopup);
-  // console.log(daysInWeek);
-  // console.log(has);
 
   // const handleSelectPromotionType = (event: React.ChangeEvent<HTMLSelectElement>) => {
   //   if (!promoted) { return; }
