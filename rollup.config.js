@@ -3,6 +3,7 @@ import pluginCommonjs from '@rollup/plugin-commonjs';
 import pluginNodeResolve from '@rollup/plugin-node-resolve';
 import { babel as pluginBabel } from '@rollup/plugin-babel';
 import { terser as pluginTerser } from 'rollup-plugin-terser';
+import pluginPolyfill from 'rollup-plugin-polyfill-node';
 
 import * as path from 'path';
 import pkg from './package.json';
@@ -97,6 +98,7 @@ const commonjs = {
     }
   ],
   plugins: [
+    pluginPolyfill(),
     pluginTypescript({
       tsconfig: 'tsconfig.json',
       module: 'esnext',
