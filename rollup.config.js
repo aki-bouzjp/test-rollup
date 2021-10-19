@@ -4,10 +4,17 @@ import pluginNodeResolve from '@rollup/plugin-node-resolve';
 import { babel as pluginBabel } from '@rollup/plugin-babel';
 import { terser as pluginTerser } from 'rollup-plugin-terser';
 import pluginPolyfill from 'rollup-plugin-polyfill-node';
+import pluginReplace from 'rollup-plugin-replace';
 
 import * as path from 'path';
+import pkg from './package.json';
 
 const __DEV__ = process.env.NODE_ENV === 'development';
+
+const external = [
+  ...Object.keys(pkg.dependencies || {}),
+  ...Object.keys(pkg.devDependencies || {})
+];
 
 const commonjs = [
   {
@@ -16,13 +23,11 @@ const commonjs = [
       {
         dir: 'lib/commonjs',
         name: 'MapboxPromoted',
-        format: 'umd',
+        format: 'amd',
         // sourcemap: __DEV__ ? 'inline' : '',
         plugins: __DEV__ ? [] : [pluginTerser()],
       }
     ],
-    // treeshake: false,
-    // preserveEntrySignatures: false,
     plugins: [
       pluginPolyfill(),
       pluginTypescript({
@@ -33,12 +38,18 @@ const commonjs = [
       pluginCommonjs({
         extensions: ['.js', '.ts'],
       }),
+      pluginBabel({
+        babelHelpers: 'bundled',
+        configFile: path.resolve(__dirname, '.babelrc.js'),
+        exclude: /node_modules/,
+      }),
       pluginNodeResolve({
-        jsnext: true,
-        preferBuiltins: true,
+        // jsnext: true,
+        // preferBuiltins: true,
         browser: true
       })
-    ]
+    ],
+    external
   }
 ];
 

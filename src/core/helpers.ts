@@ -31,9 +31,9 @@ export const CLICK_TYPES = {
   DETAIL: 'detail',
 } as const;
 
-export const TELEMETRY_ACTIONS: { [key: string]: TelemetryAPI.Actions } = {
-  [CLICK_TYPES.BANNER]: telemetryAPIs.ACTIONS.BANNER,
-  [CLICK_TYPES.PHONE]: telemetryAPIs.ACTIONS.CALL,
-  [CLICK_TYPES.DIRECTIONS]: telemetryAPIs.ACTIONS.NAVIGATION,
-  [CLICK_TYPES.DETAIL]: telemetryAPIs.ACTIONS.DETAIL,
-} as const;
+// export const TELEMETRY_ACTIONS: { [key: string]: TelemetryAPI.Actions } = {
+//   [CLICK_TYPES.BANNER]: telemetryAPIs.ACTIONS.BANNER,
+//   [CLICK_TYPES.PHONE]: telemetryAPIs.ACTIONS.CALL,
+//   [CLICK_TYPES.DIRECTIONS]: telemetryAPIs.ACTIONS.NAVIGATION,
+//   [CLICK_TYPES.DETAIL]: telemetryAPIs.ACTIONS.DETAIL,
+// } as const;

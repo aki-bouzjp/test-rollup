@@ -5,7 +5,7 @@ import {
   removeElementEndpoint,
 } from 'utils/browser';
 import { Event } from './event';
-import { EVENT_TYPES, TELEMETRY_ACTIONS } from './helpers';
+// import { EVENT_TYPES, TELEMETRY_ACTIONS } from './helpers';
 
 import * as telemetryAPIs from 'apis/telemetry';
 
@@ -21,8 +21,9 @@ class PromotionCard {
   }
 
   private sendAction(adid: string, clickType: PromotionCard.ClickTypes) {
-    const action = TELEMETRY_ACTIONS[clickType];
-    action && telemetryAPIs.sendAction(adid, action as TelemetryAPI.Actions);
+    console.log(Event, telemetryAPIs);
+    // const action = TELEMETRY_ACTIONS[clickType];
+    // action && telemetryAPIs.sendAction(adid, action as TelemetryAPI.Actions);
   }
 
   public show(feature: Feature) {
@@ -39,28 +40,28 @@ class PromotionCard {
     if (card && adidCard) { return; }
     // when if another promotion icon was clicked, it updates promotion card.
     if (card && !adidCard && updatePromotionCard) {
-      this._promoted.fire(new Event(EVENT_TYPES.UPDATE_CARD, { feature }));
+      // this._promoted.fire(new Event(EVENT_TYPES.UPDATE_CARD, { feature }));
       updateElementEndpoint('.mapboxgl-card', `mapboxgl-card ${adidClass}`);
       updatePromotionCard(properties);
       return;
     }
 
-    this._promoted.fire(new Event(EVENT_TYPES.SHOW_CARD, { feature }));
+    // this._promoted.fire(new Event(EVENT_TYPES.SHOW_CARD, { feature }));
     insertElementEndpoint(`mapboxgl-card ${adidClass}`);
     
     showPromotionCard && showPromotionCard(
       properties,
       (clickType: PromotionCard.ClickTypes, adid: string) => {
         if (!this._promoted) { return; }
-        this._promoted.fire(new Event(EVENT_TYPES.CLICK_CARD, { clickType, feature }));
+        // this._promoted.fire(new Event(EVENT_TYPES.CLICK_CARD, { clickType, feature }));
         this.sendAction(adid, clickType); 
       },
       (adid: string) => {
         if (!this._promoted) { return; }
-        this._promoted.fire(new Event(EVENT_TYPES.CLOSE_CARD, { feature }));
+        // this._promoted.fire(new Event(EVENT_TYPES.CLOSE_CARD, { feature }));
         this._promoted.deselectLayer();
         this.remove();
-        telemetryAPIs.sendDeselection(adid);
+        // telemetryAPIs.sendDeselection(adid);
       }
     );
   }

@@ -24,6 +24,3 @@ export declare const CLICK_TYPES: {
     readonly DIRECTIONS: "directions";
     readonly DETAIL: "detail";
 };
-export declare const TELEMETRY_ACTIONS: {
-    [key: string]: TelemetryAPI.Actions;
-};
