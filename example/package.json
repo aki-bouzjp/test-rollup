@@ -19,7 +19,7 @@
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "mapbox-gl": "1.13.0",
-    "test-rollup": "https://github.com/aki-bouzjp/test-rollup#fe446678e4bdc9aad45ce81c3bdb0f726c0bc1b7",
+    "test-rollup": "https://github.com/aki-bouzjp/test-rollup#a06b662c28b2ceed8b376a765fd7903dc441e0c6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",

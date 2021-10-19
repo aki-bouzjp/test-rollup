@@ -14,13 +14,15 @@ const commonjs = [
     input: 'src/core/index.ts',
     output: [
       {
-        file: 'lib/commonjs/index.js',
+        dir: 'lib/commonjs',
+        name: 'MapboxPromoted',
         format: 'amd',
         // sourcemap: __DEV__ ? 'inline' : '',
         plugins: __DEV__ ? [] : [pluginTerser()],
       }
     ],
-    treeshake: false,
+    // treeshake: false,
+    preserveEntrySignatures: false,
     plugins: [
       pluginPolyfill(),
       pluginTypescript({
@@ -31,12 +33,11 @@ const commonjs = [
       pluginCommonjs({
         extensions: ['.js', '.ts'],
       }),
-      pluginBabel({
-        babelHelpers: 'bundled',
-        configFile: path.resolve(__dirname, '.babelrc.js'),
-        exclude: /node_modules/,
-      }),
-      pluginNodeResolve()
+      pluginNodeResolve({
+        jsnext: true,
+        preferBuiltins: true,
+        browser: true
+      })
     ]
   }
 ];
