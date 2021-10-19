@@ -14,8 +14,7 @@ const commonjs = [
     input: 'src/core/index.ts',
     output: [
       {
-        dir: 'lib/commonjs',
-        entryFileNames: '[name].js',
+        file: 'lib/commonjs/index.js',
         format: 'amd',
         // sourcemap: __DEV__ ? 'inline' : '',
         plugins: __DEV__ ? [] : [pluginTerser()],
