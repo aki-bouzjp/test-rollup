@@ -16,7 +16,7 @@ const commonjs = [
       {
         dir: 'lib/commonjs',
         name: 'MapboxPromoted',
-        format: 'amd',
+        format: 'umd',
         // sourcemap: __DEV__ ? 'inline' : '',
         plugins: __DEV__ ? [] : [pluginTerser()],
       }

@@ -11,5 +11,11 @@
 // };
 
 import { test } from './test';
-export { test };
+const test2 = () => {
+  console.log(123);
+};
+const test3 = () => {
+  console.log(test());
+};
+export { test, test2, test3 };
 export default test;
