@@ -5,7 +5,6 @@ import PromotionSideCard from './promotionSideCard';
 
 export default MapboxPromoted;
 export {
-  MapboxPromoted,
   PromotionPopup,
   PromotionCard,
   PromotionSideCard

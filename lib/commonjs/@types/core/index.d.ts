@@ -3,4 +3,4 @@ import PromotionPopup from './promotionPopup';
 import PromotionCard from './promotionCard';
 import PromotionSideCard from './promotionSideCard';
 export default MapboxPromoted;
-export { MapboxPromoted, PromotionPopup, PromotionCard, PromotionSideCard };
+export { PromotionPopup, PromotionCard, PromotionSideCard };
