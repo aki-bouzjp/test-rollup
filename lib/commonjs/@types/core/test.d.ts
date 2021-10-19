@@ -1,1 +1,2 @@
-export declare const test: () => number;
+declare const test: () => number;
+export default test;

@@ -10,7 +10,7 @@
 //   PromotionSideCard
 // };
 
-import { test } from './test';
+import test from './test';
 const test2 = () => {
   console.log(123);
 };

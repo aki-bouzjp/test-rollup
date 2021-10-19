@@ -22,7 +22,7 @@ const commonjs = [
       }
     ],
     // treeshake: false,
-    preserveEntrySignatures: false,
+    // preserveEntrySignatures: false,
     plugins: [
       pluginPolyfill(),
       pluginTypescript({
