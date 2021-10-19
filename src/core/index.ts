@@ -1,11 +1,11 @@
-// import MapboxPromoted from './promoted';
-// import PromotionPopup from './promotionPopup';
+import MapboxPromoted from './promoted';
+import PromotionPopup from './promotionPopup';
 import PromotionCard from './promotionCard';
-// import PromotionSideCard from './promotionSideCard';
+import PromotionSideCard from './promotionSideCard';
 
-// export default MapboxPromoted;
+export default MapboxPromoted;
 export {
-  // PromotionPopup,
+  PromotionPopup,
   PromotionCard,
-  // PromotionSideCard
+  PromotionSideCard
 };
