@@ -15,8 +15,6 @@ import { EVENT_TYPES } from './helpers';
 
 import * as telemetryAPIs from 'apis/telemetry';
 
-import 'core-js';
-
 class MapboxPromoted implements MapboxPromoted {
   private _map: mapboxgl.Map;
   private _source: mapboxgl.VectorSource;

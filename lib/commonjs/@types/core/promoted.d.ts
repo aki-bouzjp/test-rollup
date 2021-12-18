@@ -1,6 +1,5 @@
 import mapboxgl from 'mapbox-gl';
 import { Event } from './event';
-import 'core-js';
 declare class MapboxPromoted implements MapboxPromoted {
     private _map;
     private _source;
